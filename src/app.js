@@ -2,31 +2,20 @@ const express = require('express');
 
 const app = express();
 
-app.use('/user', (req, res) => {
-  console.log('Request received for /user , i won\'t allow');
-  res.send("i mont allow");
+//ab+c  : start and end  with a and c and b+ as many
+//ab*cd : start with ab and end with cd,* means any 
+//a(bc)?d  : (bc) optional
+app.get('/a(bc)?d', (req, res) => {
+  res.send({'msg':'Hello, World!'});
 });
 
-app.get('/user', (req, res) => {
-  res.send({"first_name":"John","last_name":"Doe"});
+// : means dynamic routes
+app.get('/user/:userID', (req, res) => {
+    console.log(req.params,req.query);
+  res.send({'msg':'Hello, World!'});
 });
 
-
-app.post('/user', (req, res) => {
-  res.send('User created successfully');
-});
-
-
-app.delete('/user', (req, res) => {
-  const userId = "";//req.params.id;
-  res.send(`User with ID ${userId} deleted successfully`);
-});
-
-
-
-app.use("/test",(req,res) => {
-    res.send("Hello test from Server");
-});
+// use ?,+,(),* in routes
 
 
 app.listen(3000, () => {
