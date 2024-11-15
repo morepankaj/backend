@@ -1,0 +1,11 @@
+- Encription of password and other data set
+    - signup    
+        - validate the data
+        - encrypt the password
+        - this thing to be done by helpers (utils)
+        - use validator
+
+        - use bcrypt (install) for password hash
+
+    - login    
+        - emailid & password
