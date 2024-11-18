@@ -24,9 +24,10 @@ const userSchema = new mongoose.Schema({
     max : 60,
     required : true,
   },
+  about: {type : String},
   gender: { type: String},//use validate method
-  skills : [String],
-  hobbies : [String],
+  skills : {type:[String]},
+  hobbies : {type:[String]},
 },{
   timestamps: true
 });

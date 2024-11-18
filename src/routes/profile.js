@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
 const {authenticate} = require('../middlewares/auth');
+const {validateFields,validateEditFields} = require('../utils/validator');
 
 profileRouter.get('/profile',authenticate,async (req,res) => {
 
@@ -24,6 +25,24 @@ profileRouter.get('/profile',authenticate,async (req,res) => {
     res.send({data});
   
 });
+
+profileRouter.patch("/profile/edit",authenticate,async (req,res) => {
+  try {
+    if(!validateEditFields(req)){
+      throw new Error("Invalid edit request");
+    }
+
+    const loggedinuser = req.user;
+    console.log("b4",loggedinuser);
+    Object.keys(req.body).forEach((key) => loggedinuser[key]=req.body[key]);
+    console.log("after",loggedinuser);
+    await loggedinuser.save();
+    res.send(`${loggedinuser.firstName}, your profile updated`);
+  } catch (error) {
+    res.status(400).send("error"+error.message);
+  }
+  
+})
   
 /*  
 app.delete('/delete', async (req, res) => {

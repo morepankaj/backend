@@ -10,10 +10,10 @@ authRouter.post('/signup', async (req, res) => {
   
     try{
       validateFields(req);
-      let {firstName,lastname,email,password,age,gender} = req.body;
+      let {firstName,lastname,email,password,age,gender,about,skills,hobbies} = req.body;
       let passwordHash = await bcrypt.hash(password,10);
       console.log(req.body);
-      let user = new User({firstName,lastname,email,password:passwordHash,age,gender});
+      let user = new User({firstName,lastname,email,password:passwordHash,age,gender,about,skills,hobbies});
       await user.save();
       res.send("Data saved successfully");
     }
@@ -53,6 +53,11 @@ authRouter.post('/login', async (req, res) => {
         console.log(err);
         res.status(500).send(err);
     }
+});
+
+authRouter.post('/logout',async (req,res) => {
+    res.cookie('token', null, { expires: new Date(Date.now() + 3600000) });
+    res.send("logout successfuly..");
 });
 
 module.exports = authRouter;

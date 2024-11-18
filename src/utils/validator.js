@@ -23,4 +23,13 @@ function validateFields(req) {
 
 }
 
-module.exports = {validateFields};
+function validateEditFields(req) {
+    //call in profilr/edit
+    let allowField = ["firstName","lastName","age","gender","about","skills","hobbies"];
+
+    let isAllow = Object.keys(req.body).every(field => allowField.includes(field));
+
+    return isAllow;
+}
+
+module.exports = {validateFields,validateEditFields};

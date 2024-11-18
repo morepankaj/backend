@@ -3,12 +3,13 @@
 ##Auth
 - POST /signup
 - POST /login
-- POST /logout
+- POST /logout : set cookie to null time current time
 
 ##Profile
 - GET /profile/view
-- PATCH /profile/edit
-- PATCH /profile/password
+- PATCH /profile/edit : allowspecific fields
+- PATCH /profile/password : forgot passwd
+- validate the post , patch episode
 
 
 ##connectionrequest
