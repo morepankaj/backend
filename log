@@ -1,0 +1,162 @@
+
+> devtin@1.0.0 start
+> nodemon ./src/app.js
+
+[33m[nodemon] 3.1.7[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,cjs,json[39m
+[32m[nodemon] starting `node ./src/app.js`[39m
+Connected to MongoDB
+Server is running on port 3000
+accepted 6866d117e1819c6370cf6f81 { status: 'accepted', requestId: '6866d117e1819c6370cf6f81' }
+{
+  _id: new ObjectId('6866d2e24a20e804be72a5a3'),
+  firstName: 'pankaj',
+  email: 'pankaj@gmail.com',
+  password: '$2b$10$LlYMKZVD7OdPoyITFhWmQeJPdyycOiotJwnslNnstL5.cI1jYS.Vy',
+  age: 30,
+  gender: 'male',
+  skills: [ 'eat', 'code', 'repeate' ],
+  hobbies: [ 'Music' ],
+  createdAt: 2025-07-03T18:58:42.307Z,
+  updatedAt: 2025-07-03T18:58:42.307Z,
+  __v: 0
+}
+6866d117e1819c6370cf6f81 new ObjectId('6866d2e24a20e804be72a5a3') 6866d2e24a20e804be72a5a3
+null
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./src/app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./src/app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./src/app.js`[39m
+Connected to MongoDB
+Server is running on port 3000
+accepted 6866d117e1819c6370cf6f81 { status: 'accepted', requestId: '6866d117e1819c6370cf6f81' }
+{
+  _id: new ObjectId('6866d2e24a20e804be72a5a3'),
+  firstName: 'pankaj',
+  email: 'pankaj@gmail.com',
+  password: '$2b$10$LlYMKZVD7OdPoyITFhWmQeJPdyycOiotJwnslNnstL5.cI1jYS.Vy',
+  age: 30,
+  gender: 'male',
+  skills: [ 'eat', 'code', 'repeate' ],
+  hobbies: [ 'Music' ],
+  createdAt: 2025-07-03T18:58:42.307Z,
+  updatedAt: 2025-07-03T18:58:42.307Z,
+  __v: 0
+}
+6866d117e1819c6370cf6f81 new ObjectId('6866d2e24a20e804be72a5a3') 6866d2e24a20e804be72a5a3
+TypeError: Class constructor ObjectId cannot be invoked without 'new'
+    at /home/acer/Desktop/learning/devTin/src/routes/request.js:106:34
+    at Layer.handle [as handle_request] (/home/acer/Desktop/learning/devTin/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/acer/Desktop/learning/devTin/node_modules/express/lib/router/route.js:149:13)
+    at authenticate (/home/acer/Desktop/learning/devTin/src/middlewares/auth.js:26:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./src/app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./src/app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./src/app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./src/app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./src/app.js`[39m
+Connected to MongoDB
+Server is running on port 3000
+accepted 6866d117e1819c6370cf6f81 { status: 'accepted', requestId: '6866d117e1819c6370cf6f81' }
+{
+  _id: new ObjectId('6866d2e24a20e804be72a5a3'),
+  firstName: 'pankaj',
+  email: 'pankaj@gmail.com',
+  password: '$2b$10$LlYMKZVD7OdPoyITFhWmQeJPdyycOiotJwnslNnstL5.cI1jYS.Vy',
+  age: 30,
+  gender: 'male',
+  skills: [ 'eat', 'code', 'repeate' ],
+  hobbies: [ 'Music' ],
+  createdAt: 2025-07-03T18:58:42.307Z,
+  updatedAt: 2025-07-03T18:58:42.307Z,
+  __v: 0
+}
+6866d117e1819c6370cf6f81 new ObjectId('6866d2e24a20e804be72a5a3') 6866d2e24a20e804be72a5a3
+null
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./src/app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./src/app.js`[39m
+Connected to MongoDB
+Server is running on port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./src/app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./src/app.js`[39m
+Connected to MongoDB
+Server is running on port 3000
+accepted 6866d117e1819c6370cf6f81 { status: 'accepted', requestId: '6866d117e1819c6370cf6f81' }
+{
+  _id: new ObjectId('6866d2e24a20e804be72a5a3'),
+  firstName: 'pankaj',
+  email: 'pankaj@gmail.com',
+  password: '$2b$10$LlYMKZVD7OdPoyITFhWmQeJPdyycOiotJwnslNnstL5.cI1jYS.Vy',
+  age: 30,
+  gender: 'male',
+  skills: [ 'eat', 'code', 'repeate' ],
+  hobbies: [ 'Music' ],
+  createdAt: 2025-07-03T18:58:42.307Z,
+  updatedAt: 2025-07-03T18:58:42.307Z,
+  __v: 0
+}
+6866d117e1819c6370cf6f81 new ObjectId('6866d2e24a20e804be72a5a3') 6866d2e24a20e804be72a5a3
+null
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./src/app.js`[39m
+Connected to MongoDB
+Server is running on port 3000
+accepted 6866d117e1819c6370cf6f81 { status: 'accepted', requestId: '6866d117e1819c6370cf6f81' }
+{
+  _id: new ObjectId('6866d2e24a20e804be72a5a3'),
+  firstName: 'pankaj',
+  email: 'pankaj@gmail.com',
+  password: '$2b$10$LlYMKZVD7OdPoyITFhWmQeJPdyycOiotJwnslNnstL5.cI1jYS.Vy',
+  age: 30,
+  gender: 'male',
+  skills: [ 'eat', 'code', 'repeate' ],
+  hobbies: [ 'Music' ],
+  createdAt: 2025-07-03T18:58:42.307Z,
+  updatedAt: 2025-07-03T18:58:42.307Z,
+  __v: 0
+}
+6866d117e1819c6370cf6f81 new ObjectId('6866d2e24a20e804be72a5a3') 6866d2e24a20e804be72a5a3
+{
+  _id: new ObjectId('6866db5de7533bd99fc8cb43'),
+  fromUserId: new ObjectId('6866d117e1819c6370cf6f81'),
+  toUserId: new ObjectId('6866d2e24a20e804be72a5a3'),
+  status: 'interested',
+  createdAt: 2025-07-03T19:34:53.805Z,
+  updatedAt: 2025-07-03T19:34:53.805Z,
+  __v: 0
+}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./src/app.js`[39m
+Connected to MongoDB
+Server is running on port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./src/app.js`[39m
+Connected to MongoDB
+Server is running on port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./src/app.js`[39m
+Connected to MongoDB
+Server is running on port 3000
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./src/app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./src/app.js`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node ./src/app.js`[39m
+Connected to MongoDB
+Server is running on port 3000
+[32m[nodemon] restarting child process[39m
+[32m[nodemon] starting `node ./src/app.js`[39m

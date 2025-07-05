@@ -24,3 +24,5 @@
 - GET /feed 
 
 status : accepted, rejected,ignored, intresested
+
+- why table shouldn't have unnessesay indexes

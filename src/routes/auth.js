@@ -26,26 +26,33 @@ authRouter.post('/login', async (req, res) => {
     try{
         let {email,password} = req.body;
         if (validator.isEmpty(email) || validator.isEmpty(password)) {
-        throw new Error("Email and password are required");
+          throw new Error("Email and password are required");
         }
         if (!validator.isEmail(email)) {
-        throw new Error("Invalid email address");
+          throw new Error("Invalid email address");
         }
         if (!validator.isLength(password, { min: 8, max: 16 })) {
-        throw new Error("Password must be between 8 and 16 characters long");
+          throw new Error("Password must be between 8 and 16 characters long");
         }
-        let user = await User.findOne({email:email});
+        console.log(email,password);
+        const user = await User.findOne({ email: email });
+        //let user = await User.findOne({email});
+        console.log(!user,"user",user);
         if(!user){
-        res.status(404).send("Invalid credentials");
+          res.status(404).send("Invalid credentials!");
+          return;
         }
         //await bcrypt.compare(password,user.password);
-        let passwordMatch = user.validatepassword(password);
+        console.log(user);
+        console.log(password);
+        let passwordMatch = await user.validatepassword(password);
+        console.log("=>>>",passwordMatch);
         if(!passwordMatch){
-        res.status(401).send("Invalid credentials");
+          res.status(401).send("Invalid credentials.!");
         }
         //let token = jwt.sign({_id:user.id},"DND",{"expiresIn":"1d"});
         let token = await user.getJWTToken();
-        console.log(token);
+        //console.log(token);
         res.cookie('token',token);
         res.send("Login successful");
     }

@@ -41,12 +41,14 @@ userSchema.methods.getJWTToken = async function () {
 
 userSchema.methods.validatepassword = async function (passwordInputByUser) {
   const user = this;
-  let isMatch = await bcrypt.compare(passwordInputByUser,user.password);
+  console.log(passwordInputByUser,this.password);
+  let isMatch = await bcrypt.compare(passwordInputByUser,this.password);
   return isMatch;
 };
 
 const User = mongoose.model('User', userSchema);
 
+userSchema.index({"email":1});
 
 
 module.exports = mongoose.model('user', userSchema);

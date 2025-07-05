@@ -5,6 +5,7 @@ const User = require('../models/User');
 
 const {authenticate} = require('../middlewares/auth');
 const {validateFields,validateEditFields} = require('../utils/validator');
+const bcrypt = require('bcrypt');
 
 profileRouter.get('/profile',authenticate,async (req,res) => {
 
@@ -31,11 +32,14 @@ profileRouter.patch("/profile/edit",authenticate,async (req,res) => {
     if(!validateEditFields(req)){
       throw new Error("Invalid edit request");
     }
+    if(req.body.password == "" && req.body.oldPassword == ""){
+      throw new Error("Password cannot be empty");
+    }
 
     const loggedinuser = req.user;
-    console.log("b4",loggedinuser);
+    //console.log("b4",loggedinuser);
     Object.keys(req.body).forEach((key) => loggedinuser[key]=req.body[key]);
-    console.log("after",loggedinuser);
+    //console.log("after",loggedinuser);
     await loggedinuser.save();
     res.send(`${loggedinuser.firstName}, your profile updated`);
   } catch (error) {
@@ -44,6 +48,29 @@ profileRouter.patch("/profile/edit",authenticate,async (req,res) => {
   
 })
   
+
+
+profileRouter.patch("/profile/password",authenticate,async (req,res) => {
+  try {
+    const loggedinuser = req.user;
+    const {oldPassword, newPassword} = req.body;
+
+    if (!oldPassword || !newPassword) {
+      return res.status(400).send("Both old and new passwords are required.");
+    }
+
+    const isMatch = await loggedinuser.validatepassword(oldPassword);
+    if (!isMatch) {
+      return res.status(401).send("Incorrect old password.");
+    }
+    let passwordHash = await bcrypt.hash(newPassword,10);
+    loggedinuser.password = passwordHash; // The pre-save hook in the User model will hash this
+    await loggedinuser.save();
+    res.send("Password updated successfully.");
+  } catch (error) {
+    res.status(500).send("Error updating password: " + error.message);
+  }
+});
 /*  
 app.delete('/delete', async (req, res) => {
     try{
