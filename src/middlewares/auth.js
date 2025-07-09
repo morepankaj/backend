@@ -16,7 +16,7 @@ async function authenticate(req, res, next) {
         if (!token) {
             throw new Error("Token is missing");
         }
-        const decodedOjb = await jwt.verify(token, "DND");
+        const decodedOjb = await jwt.verify(token, process.env.SECRET);
         const {_id} = decodedOjb; 
         const user = await User.findById(_id);
         if (!user) {

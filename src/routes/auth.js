@@ -50,7 +50,7 @@ authRouter.post('/login', async (req, res) => {
         if(!passwordMatch){
           res.status(401).send("Invalid credentials.!");
         }
-        //let token = jwt.sign({_id:user.id},"DND",{"expiresIn":"1d"});
+        //let token = jwt.sign({_id:user.id},process.env.SECRET,{"expiresIn":"1d"});
         let token = await user.getJWTToken();
         //console.log(token);
         res.cookie('token',token);

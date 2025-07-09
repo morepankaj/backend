@@ -12,7 +12,7 @@ profileRouter.get('/profile',authenticate,async (req,res) => {
     const cookie = req.cookies;
     console.log(cookie);
   
-    let id = jwt.verify(cookie.token,"DND")._id;
+    let id = jwt.verify(cookie.token,process.env.SECRET)._id;
     console.log(id);
     if (!id) {
       res.send("Invalid token");

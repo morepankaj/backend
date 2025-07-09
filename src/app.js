@@ -2,7 +2,8 @@ const express = require('express');
 const {connectDB} = require('./config/database');
 const bcrypt = require('bcrypt');
 const cookieParser = require('cookie-parser');
-
+require('dotenv').config();
+console.log(process.env);
 const app = express();
 
 app.use(express.json());
