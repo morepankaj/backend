@@ -182,3 +182,8 @@ app.use("/",(err,req,res,next) => {
 
 
 ===================================================
+
+- use of bee queue and bull mq package for bulk mail sending or send it to SES amazon
+- cron job (node-cron) package usinf scheduleing
+- date fns package 
+- email send using SES where whoever got friend request send it 
